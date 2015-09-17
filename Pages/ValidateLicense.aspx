@@ -14,10 +14,15 @@
 
 <asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
     <WebPartPages:WebPartZone runat="server" FrameType="TitleBarOnly" ID="full" Title="loc:full" />
+    <h2>License Data</h2>
+    <p id="license-data"></p>
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>
     <script type="text/javascript" src="/_layouts/15/init.js"></script>
     <script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
     <script type="text/javascript" src="/_layouts/15/sp.js"></script>
     <script type="text/javascript" src="../Scripts/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../Scripts/App.js"></script>
+    <script type="text/javascript">
+        validateLicense();
+    </script>
 </asp:Content>

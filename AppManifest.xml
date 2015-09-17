@@ -17,4 +17,7 @@
   <AppPermissionRequests>
     <AppPermissionRequest Scope="http://sharepoint/content/tenant" Right="FullControl" />
   </AppPermissionRequests>
+  <RemoteEndpoints>
+    <RemoteEndpoint Url="https://verificationservice.officeapps.live.com/ova/verificationagent.svc" />
+  </RemoteEndpoints>
 </App>

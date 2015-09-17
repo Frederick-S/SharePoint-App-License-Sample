@@ -43,3 +43,33 @@
         alert(args.get_message());
     });
 }
+
+function validateLicense() {
+    var productId = '{9ccda171-8cec-49ff-b11c-3500dbe67922}';
+    var context = SP.ClientContext.get_current();
+    var appLicenseCollection = SP.Utilities.Utility.getAppLicenseInformation(context, productId);
+
+    context.executeQueryAsync(function (sender, args) {
+        if (appLicenseCollection.get_count() > 0) {
+            var rawXMLLicenseToken = appLicenseCollection.get_item(0).get_rawXMLLicenseToken();
+            var rawXMLLicenseTokenEncoded = encodeURIComponent(rawXMLLicenseToken);
+            var verificationServiceUrl = "https://verificationservice.officeapps.live.com/ova/verificationagent.svc/rest/verify?token=";
+
+            var request = new SP.WebRequestInfo();
+            request.set_url(verificationServiceUrl + rawXMLLicenseTokenEncoded);
+            request.set_method("GET");
+
+            var response = SP.WebProxy.invoke(context, request);
+
+            context.executeQueryAsync(function () {
+                $('#license-data').text(response.get_body());
+            }, function () {
+                alert(response.get_body());
+            });
+        } else {
+            alert('No licene token is found.');
+        }
+    }, function (sender, args) {
+        alert(args.get_message());
+    });
+}
