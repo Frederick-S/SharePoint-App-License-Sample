@@ -26,6 +26,9 @@
     <div class="UserSectionBody">
         <input type="text" value="{9ccda171-8cec-49ff-b11c-3500dbe67922}" class="input-text" id="product-id" disabled="disabled" />
     </div>
+    <div class="UserSectionHead">
+        <label>Purchaser Id</label>
+    </div>
     <div class="UserSectionBody">
         <input type="text" value="32F3E7FC559F4F49" class="input-text" id="purchaser-id" />
         <input type="button" value="Generate" id="generate-purchaser-id" />
