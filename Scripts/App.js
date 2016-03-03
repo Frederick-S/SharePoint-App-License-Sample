@@ -1,6 +1,7 @@
 ﻿function importLicense() {
     var appTitle = $('#app-title').val();
     var productId = $('#product-id').val();
+    var purchaserId = $('#purchaser-id').val();
     var providerName = $('#provider-name').val();
     var licenseType = $('#license-type').val();
     var userLimit = $('#user-limit').val();
@@ -21,7 +22,7 @@
             '<t ' +
             'aid="WA900006056" ' +
             'pid="' + productId + '" ' +
-            'cid="32F3E7FC559F4F49" ' +
+            'cid="' + purchaserId + '" ' +
             (!isFree ? 'ts="' + userLimit + '" ' : 'ts="0" ') +
             'et="' + licenseType + '" ' +
             'ad="' + start.toISOString() + '" ' +

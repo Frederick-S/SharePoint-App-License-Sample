@@ -26,6 +26,10 @@
     <div class="UserSectionBody">
         <input type="text" value="{9ccda171-8cec-49ff-b11c-3500dbe67922}" class="input-text" id="product-id" disabled="disabled" />
     </div>
+    <div class="UserSectionBody">
+        <input type="text" value="32F3E7FC559F4F49" class="input-text" id="purchaser-id" />
+        <input type="button" value="Generate" id="generate-purchaser-id" />
+    </div>
     <div class="UserSectionHead">
         <label>Provider Name</label>
     </div>
@@ -91,6 +95,14 @@
                 default:
                     break;
             }
+        });
+
+        var hex8 = function () {
+            return Math.floor((1 + Math.random()) * 0x100000000).toString(16).substring(1);
+        }
+
+        $('#generate-purchaser-id').click(function () {
+            $('#purchaser-id').val(hex8() + hex8());
         });
 
         $('#import-license').click(function () {
